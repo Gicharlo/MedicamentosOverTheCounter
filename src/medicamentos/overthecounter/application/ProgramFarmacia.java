@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 import javafx.application.Application;
 import medicamentos.overthecounter.services.Db;
 
-public class Program extends Application {
+public class ProgramFarmacia extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Descanso.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("InicialFarmacia.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

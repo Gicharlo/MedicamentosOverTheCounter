@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="625.0" style="-fx-background-color: #7b68ee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="625.0" style="-fx-background-color: #0056cd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="258.0" layoutY="305.0" onAction="#IniciarConsulta" text="Olá Mundo" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
