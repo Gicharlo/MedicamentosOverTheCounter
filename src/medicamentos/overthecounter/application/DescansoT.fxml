@@ -12,7 +12,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="872.0" prefWidth="1257.0" style="-fx-background-color: #0056cd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.DescansoTController">
     <children>
-        <Button fx:id="button" layoutX="497.0" layoutY="547.0" onAction="#IniciarConsulta" prefHeight="73.0" prefWidth="270.0" text="Iniciar consulta " />
+        <Button fx:id="button" layoutX="497.0" layoutY="547.0" onAction="#IniciarConsulta" prefHeight="73.0" prefWidth="270.0" text="Iniciar consulta ">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Button>
       <Accordion layoutX="320.0" layoutY="162.0" />
       <Button layoutX="560.0" layoutY="483.0" mnemonicParsing="false" onAction="#Hora" prefHeight="48.0" prefWidth="144.0" text="18:29:46" />
       <Button layoutX="1041.0" layoutY="59.0" mnemonicParsing="false" onAction="#Data" prefHeight="48.0" prefWidth="177.0" text="04/05/2022" />

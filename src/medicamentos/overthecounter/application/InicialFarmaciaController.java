@@ -1,5 +1,5 @@
 
-package medicamentos.overthecounter.screens;
+package medicamentos.overthecounter.application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
