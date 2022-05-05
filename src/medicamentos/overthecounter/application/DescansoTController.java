@@ -48,7 +48,7 @@ public class DescansoTController implements Initializable {
             Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+    /*
        @FXML
     private void Avaliaçao(ActionEvent event) {
         try {
@@ -61,7 +61,7 @@ public class DescansoTController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
