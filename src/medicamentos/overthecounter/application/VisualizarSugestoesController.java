@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package medicamentos.overthecounter.screens;
-
+package medicamentos.overthecounter.application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author giova
  */
-public class InicialClienteController implements Initializable {
+public class VisualizarSugestoesController implements Initializable {
 
     /**
      * Initializes the controller class.

@@ -1,5 +1,5 @@
 
-package medicamentos.overthecounter.screens;
+package medicamentos.overthecounter.application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,8 +10,11 @@ import javafx.fxml.Initializable;
  *
  * @author giova
  */
-public class InstitucionalController implements Initializable {
+public class AtualizarEstoqueController implements Initializable {
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

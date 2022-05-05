@@ -10,15 +10,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="872.0" prefWidth="1257.0" style="-fx-background-color: #0056cd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.DescansoTController">
+<AnchorPane id="AnchorPane" prefHeight="872.0" prefWidth="1257.0" style="-fx-background-color: #414bb2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.DescansoTController">
     <children>
-        <Button fx:id="button" layoutX="497.0" layoutY="547.0" onAction="#IniciarConsulta" prefHeight="73.0" prefWidth="270.0" text="Iniciar consulta ">
+        <Button fx:id="button" layoutX="497.0" layoutY="547.0" onAction="#IniciarConsulta" prefHeight="73.0" prefWidth="270.0" style=" -fx-background-image: url('teste.png');" text="Iniciar consulta ">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font></Button>
       <Accordion layoutX="320.0" layoutY="162.0" />
-      <Button layoutX="560.0" layoutY="483.0" mnemonicParsing="false" onAction="#Hora" prefHeight="48.0" prefWidth="144.0" text="18:29:46" />
-      <Button layoutX="1041.0" layoutY="59.0" mnemonicParsing="false" onAction="#Data" prefHeight="48.0" prefWidth="177.0" text="04/05/2022" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="1.0" layoutY="677.0" stroke="BLACK" strokeType="INSIDE" width="1263.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="164.0" layoutX="18.0" layoutY="695.0" stroke="BLACK" strokeType="INSIDE" width="1230.0" />
       <Text fill="#1a00ff" layoutX="109.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
@@ -56,7 +54,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="103.0" layoutY="727.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+      <Hyperlink layoutX="103.0" layoutY="727.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
       <Hyperlink layoutX="385.0" layoutY="726.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
       <Text fill="#1a00ff" layoutX="172.0" layoutY="844.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
          <font>
@@ -73,5 +71,6 @@
             <Image url="@1%20(1).png" />
          </image>
       </ImageView>
+
     </children>
 </AnchorPane>

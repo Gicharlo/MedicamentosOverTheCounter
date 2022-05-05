@@ -1,6 +1,6 @@
-package medicamentos.overthecounter.screens;
 
-import medicamentos.overthecounter.application.*;
+package medicamentos.overthecounter.application;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,16 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class FXMLDocumentController implements Initializable {
+
+public class InstitucionalController implements Initializable {
     
     @FXML
-    private Label label;
-    
-    @FXML
-    private void IniciarConsulta(ActionEvent event) {
+    private void btncTelaInicial(ActionEvent event) {
         try {
             FXMLLoader tela2 = new FXMLLoader(getClass().getResource("InicialCliente.fxml"));
             Parent root1 = ((Parent) tela2.load());
@@ -30,13 +27,12 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        // TODO
     }    
     
 }
