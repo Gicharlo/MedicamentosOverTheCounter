@@ -39,7 +39,7 @@ public class InicialFarmaciaController implements Initializable {
     }
     
     @FXML
-    private void btncHistorico (ActionEvent event) {   
+    private void Historico (ActionEvent event) {   
         try {
             FXMLLoader tela2 = new FXMLLoader(getClass().getResource("HistoricoConsulta.fxml"));
             Parent root1 = ((Parent) tela2.load());
