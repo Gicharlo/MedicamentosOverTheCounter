@@ -6,7 +6,6 @@ package medicamentos.overthecounter.application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class DescansoTController implements Initializable {
+    
 
     @FXML
     private void IniciarConsulta(ActionEvent event) {
@@ -64,14 +64,6 @@ public class DescansoTController implements Initializable {
     }*/
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) {  
     }
-
-    /**
-     * @return the Hora
-     */
-   
-    
-    
 }

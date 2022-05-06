@@ -7,12 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 import medicamentos.overthecounter.services.Db;
 
 public class ProgramCliente extends Application {
-
+    
+ 
     @Override
     public void start(Stage stage) throws Exception {
+        
         Parent root = FXMLLoader.load(getClass().getResource("DescansoT.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

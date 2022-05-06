@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,71 +14,85 @@
 
 <AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.InicialClienteController">
    <children>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="56.0" layoutY="15.0">
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="50.0">
          <image>
             <Image url="@../images/1%20(1).png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="158.0" layoutX="-1.0" layoutY="538.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="125.0" layoutX="12.0" layoutY="554.0" stroke="BLACK" strokeType="INSIDE" width="1007.0" />
-      <Text fill="#414bb2" layoutX="39.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9dbf0" height="49.0" layoutY="120.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
+      <Accordion />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="158.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="125.0" layoutX="13.0" layoutY="553.0" stroke="BLACK" strokeType="INSIDE" width="1007.0" />
+      <Text fill="#414bb2" layoutX="41.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#414bb2" layoutX="297.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
+      <Text fill="#414bb2" layoutX="299.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#414bb2" layoutX="528.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
+      <Text fill="#414bb2" layoutX="530.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#4b4b4b" layoutX="528.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
+      <Text fill="#4b4b4b" layoutX="529.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#4b4b4b" layoutX="528.0" layoutY="625.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
+      <Text fill="#4b4b4b" layoutX="529.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#414bb2" layoutX="774.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
+      <Text fill="#414bb2" layoutX="776.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#4b4b4b" layoutX="774.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
+      <Text fill="#4b4b4b" layoutX="776.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="39.0" layoutY="583.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
-      <Hyperlink layoutX="290.0" layoutY="583.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
-      <Text fill="#414bb2" layoutX="77.0" layoutY="656.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
+      <Hyperlink layoutX="33.0" layoutY="583.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+      <Hyperlink layoutX="292.0" layoutY="583.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
+      <Text fill="#414bb2" layoutX="275.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#4b4b4b" layoutX="220.0" layoutY="657.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alexsander Teixeira | Caique Moreira | David Cerqueira | Giovanna Charlo | Thiago Benevides">
+      <Text fill="#4b4b4b" layoutX="416.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caique Moreira | David Cerqueira | Giovanna Charlo">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9dbf0" height="49.0" layoutX="-1.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
-      <Accordion layoutX="116.0" layoutY="129.0" />
-      <Pane layoutX="908.0" layoutY="41.0" onMouseClicked="#AbrirCesta" prefHeight="68.0" prefWidth="71.0" style="-fx-background-color: #d9dbf0; -fx-background-radius: 5px;">
+      <Pane layoutX="261.0" layoutY="32.0" prefHeight="59.0" prefWidth="536.0" style="-fx-background-color: #FFFFFF,; -fx-background-radius: 15;">
          <children>
-            <ImageView fitHeight="58.0" fitWidth="71.0" layoutX="8.0" layoutY="7.0" onMouseClicked="#AbrirCesta" pickOnBounds="true" preserveRatio="true">
+            <TextField layoutY="3.0" prefHeight="49.0" prefWidth="536.0" style="-fx-background-radius: 15;" text="Digite seu sintoma..." />
+            <Button layoutX="476.0" layoutY="3.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="60.0" style="-fx-background-radius: 15;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Lupa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="299.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="912.0" layoutY="31.0" mnemonicParsing="false" onAction="#AbrirCesta" style="-fx-background-radius: 15;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/Cesta.png" />
                </image>
             </ImageView>
-         </children>
-      </Pane>
-
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

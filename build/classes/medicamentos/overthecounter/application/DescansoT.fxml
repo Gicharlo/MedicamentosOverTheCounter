@@ -12,65 +12,65 @@
 
 <AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.DescansoTController">
     <children>
-        <Button fx:id="button" layoutX="497.0" layoutY="547.0" onAction="#IniciarConsulta" prefHeight="73.0" prefWidth="270.0" style=" -fx-background-image: url('teste.png');" text="Iniciar consulta ">
+        <Button fx:id="button" layoutX="442.0" layoutY="398.0" onAction="#IniciarConsulta" prefHeight="40.0" prefWidth="150.0" style=" -fx-background-image: url('teste.png');" text="Iniciar consulta ">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font></Button>
       <Accordion layoutX="320.0" layoutY="162.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="2.0" layoutY="677.0" stroke="BLACK" strokeType="INSIDE" width="1263.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="164.0" layoutX="18.0" layoutY="695.0" stroke="BLACK" strokeType="INSIDE" width="1230.0" />
-      <Text fill="#1a00ff" layoutX="109.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fill="#1a00ff" layoutX="392.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fill="#1a00ff" layoutX="727.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="727.0" layoutY="748.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text layoutX="727.0" layoutY="775.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text fill="#1a00ff" layoutX="976.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="976.0" layoutY="747.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Hyperlink layoutX="103.0" layoutY="727.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
-      <Hyperlink layoutX="385.0" layoutY="726.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
-      <Text fill="#1a00ff" layoutX="172.0" layoutY="844.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text layoutX="320.0" layoutY="845.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alexsander Teixeira | Caique Moreira | David Cerqueira | Giovanna Charlo | Thiago Benevides">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="301.0" fitWidth="324.0" layoutX="470.0" layoutY="146.0">
+      <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="392.0" layoutY="139.0">
          <image>
             <Image url="@../images/1%20(1).png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="158.0" layoutY="537.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="125.0" layoutX="13.0" layoutY="553.0" stroke="BLACK" strokeType="INSIDE" width="1007.0" />
+      <Text fill="#414bb2" layoutX="41.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#414bb2" layoutX="299.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#414bb2" layoutX="530.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#4b4b4b" layoutX="529.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#4b4b4b" layoutX="529.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#414bb2" layoutX="776.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#4b4b4b" layoutX="776.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Hyperlink layoutX="33.0" layoutY="583.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+      <Hyperlink layoutX="292.0" layoutY="583.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
+      <Text fill="#414bb2" layoutX="275.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#4b4b4b" layoutX="416.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caique Moreira | David Cerqueira | Giovanna Charlo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
 
     </children>
 </AnchorPane>
