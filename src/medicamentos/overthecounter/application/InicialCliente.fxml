@@ -47,47 +47,47 @@
             </ImageView>
          </graphic>
       </Button>
-      <Pane layoutX="6.0" layoutY="631.0" prefHeight="158.0" prefWidth="1034.0">
+      <Pane layoutY="538.0" prefHeight="158.0" prefWidth="1034.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="158.0" layoutX="-6.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="1040.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="158.0" stroke="BLACK" strokeType="INSIDE" width="1034.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="135.0" layoutX="7.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="1015.0" />
-            <Text fill="#414bb2" layoutX="49.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
+            <Text fill="#414bb2" layoutX="37.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Institucional">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#414bb2" layoutX="373.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
+            <Text fill="#414bb2" layoutX="321.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#414bb2" layoutX="572.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
+            <Text fill="#414bb2" layoutX="529.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contatos">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#4b4b4b" layoutX="571.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
+            <Text fill="#4b4b4b" layoutX="529.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(xx) xxxxx-xxxx">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#4b4b4b" layoutX="571.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
+            <Text fill="#4b4b4b" layoutX="529.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxxxx@hotmail.com">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#414bb2" layoutX="818.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
+            <Text fill="#414bb2" layoutX="776.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drogaria São Paulo" wrappingWidth="169.35546875">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#4b4b4b" layoutX="818.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
+            <Text fill="#4b4b4b" layoutX="776.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economize de verdade!">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="41.0" layoutY="61.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
-            <Hyperlink layoutX="373.0" layoutY="65.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
+            <Hyperlink layoutX="31.0" layoutY="49.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+            <Hyperlink layoutX="313.0" layoutY="38.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
             <Text fill="#414bb2" layoutX="226.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
                <font>
                   <Font size="18.0" />
@@ -187,5 +187,6 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Button layoutX="878.0" layoutY="488.0" mnemonicParsing="false" onAction="#CancelarConsulta" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Cancelar consulta" />
    </children>
 </AnchorPane>

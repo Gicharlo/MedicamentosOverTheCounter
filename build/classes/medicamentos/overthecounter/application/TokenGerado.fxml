@@ -48,7 +48,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="33.0" layoutY="583.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+      <Hyperlink layoutX="33.0" layoutY="583.0" onAction="Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
       <Hyperlink layoutX="292.0" layoutY="583.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
       <Text fill="#414bb2" layoutX="275.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
          <font>
@@ -65,6 +65,9 @@
             <Image url="@../images/1%20(1).png" />
          </image>
       </ImageView>
-      <Button layoutX="459.0" layoutY="423.0" mnemonicParsing="false" onAction="#FinalizarConsulta" prefHeight="47.0" prefWidth="96.0" style="-fx-background-radius: 15;" text="Finalizar" />
+      <Button layoutX="447.0" layoutY="423.0" mnemonicParsing="false" onAction="#FinalizarConsulta" prefHeight="48.0" prefWidth="140.0" style="-fx-background-radius: 15;" text="Finalizar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>

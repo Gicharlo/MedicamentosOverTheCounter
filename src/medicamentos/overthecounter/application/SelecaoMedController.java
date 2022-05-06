@@ -6,18 +6,15 @@ package medicamentos.overthecounter.application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
-/**
- * FXML Controller class
- *
- * @author giova
- */
+import javafx.scene.image.ImageView;
 public class SelecaoMedController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+   // @FXML;
+   // private ImageView med;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
