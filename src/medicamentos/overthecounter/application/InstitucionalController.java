@@ -30,6 +30,7 @@ public class InstitucionalController implements Initializable {
             Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

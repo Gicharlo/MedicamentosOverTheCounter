@@ -59,7 +59,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="33.0" layoutY="583.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+      <Hyperlink layoutX="33.0" layoutY="583.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
       <Hyperlink layoutX="292.0" layoutY="583.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
       <Text fill="#414bb2" layoutX="275.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
          <font>
