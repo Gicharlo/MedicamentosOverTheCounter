@@ -15,9 +15,14 @@ public class Db {
      * @return the url
      */
     public void RetornaMed(ResultSet med) throws SQLException{  
-         while (med.next()) {
+         /*while (med.next()) {
                 System.out.println("Nome:" + med.getString("nome"));
+            }*/
+         while(med.next()){
+              System.out.println("Nome:" + med.getString("nome"));
             }
+       
+         
     }
     public String getUrl() {
         return url;

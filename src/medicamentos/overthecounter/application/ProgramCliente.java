@@ -24,6 +24,7 @@ public class ProgramCliente extends Application {
     public static void main(String[] args) throws SQLException {
         launch(args);
         Db conecta = new Db();
+        /*
         try {
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO"));
@@ -35,6 +36,6 @@ public class ProgramCliente extends Application {
             if (conecta.getConexao() != null) {
                 conecta.getConexao().close();
             }
-        }
+        }*/
     }
 }

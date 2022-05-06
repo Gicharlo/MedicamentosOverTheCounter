@@ -140,7 +140,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Dor de cabeça">
+                  <MenuItem mnemonicParsing="false" onAction="#DordeCabeca" text="Dor de cabeça">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
