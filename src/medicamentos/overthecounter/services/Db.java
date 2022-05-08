@@ -6,7 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Db {
     
@@ -14,13 +18,26 @@ public class Db {
     private String url = "jdbc:mysql://localhost:3306/db_projeto?user=root&password=Giovanna@22";
     private ResultSet med;
     private List<String> nomesMed = new ArrayList<>();
+    private Map<String, String> nomeP= new HashMap<>();
     private PreparedStatement stmt;
     
-    public void RetornaMed(ResultSet med) throws SQLException{
+    public void RetornaNomeMed(ResultSet med) throws SQLException{
        
          while(med.next()){
               getNomesMed().add(med.getString("nome"));      
             }
+    }
+    public void NomeP(ResultSet med) throws SQLException{
+      
+           try {
+               while(med.next()){
+                   getNomeP().put(med.getString("nome"), med.getString("preco"));
+               }
+           } catch (SQLException ex) {
+               Logger.getLogger(Db.class.getName()).log(Level.SEVERE, null, ex);
+           }
+      
+      
     }
     public String getUrl() {
         return url;
@@ -80,6 +97,13 @@ public class Db {
      */
     public PreparedStatement getStmt() {
         return stmt;
+    }
+
+    /**
+     * @return the nomeP
+     */
+    public Map<String, String> getNomeP() {
+        return nomeP;
     }
 }
 

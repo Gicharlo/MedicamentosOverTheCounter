@@ -48,9 +48,19 @@ public class InicialClienteController implements Initializable {
     
     
 @FXML
-    private void Avaliacao(ActionEvent event) {
+    private void Avaliacao(ActionEvent event) throws SQLException {
 	/*Sempre que clicar em cancelar, ela da a msg Tchau.*/
         String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
+        conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+        conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
+        conecta.NomeP(conecta.getMed());
+        
+        //for (int i = 0; i < conecta.getNomeP().size(); i++) {  
+        //   }
+
+       /* String sql = "INSERT INTO avaliacao (nome, )"
+                         + "VALUES ('remedio', 'dor');";
+         conecta.getConexao().prepareStatement(sql).execute();*/
         if (avaliacao == null) {
             JOptionPane.showMessageDialog(null, "Tchau...");
         } else {

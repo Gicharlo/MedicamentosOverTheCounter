@@ -8,8 +8,8 @@ import java.io.File;
 
 public class Images {
     private final File dorflex = new File("./src/medicamentos/overthecounter/images/Analgésico Dorflex 10 Comprimidos.png");
-    private final File doril  = new File("@.../images/Doril Enxaqueca 18 Comprimidos.png");
-    private final File dipirona  = new File("@.../images/Dipirona Sódica 500mg Genérico EMS 10 Comprimidos.png");
+    private final File doril  = new File("./src/medicamentos/overthecounter/images/Doril Enxaqueca 18 Comprimidos.png");
+    private final File dipirona  = new File("./src/medicamentos/overthecounter/images/Dipirona Sódica 500mg Genérico EMS 10 Comprimidos.png");
     private final File neosaldina = new File("@.../images/Neosaldina 20 drágeas.png");
     private final File aspirina = new File("@.../images/Analgésico Aspirina Adulto 500mg Bayer 10 Comprimidos.png");
 

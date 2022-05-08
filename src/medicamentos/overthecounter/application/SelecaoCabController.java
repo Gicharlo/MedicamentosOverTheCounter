@@ -69,42 +69,52 @@ public class SelecaoCabController implements Initializable {
         try {
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
-            conecta.RetornaMed(conecta.getMed());
+            conecta.RetornaNomeMed(conecta.getMed());
 
             for (int i = 0; i < conecta.getNomesMed().size(); i++) {
                 switch (i) {
                     case 0:
                         String nome = conecta.getNomesMed().get(i);
+                        System.out.println(nome);
                         lmed1.setText(nome);
                         break;
                     case 1:
                         String nome2 = conecta.getNomesMed().get(i);
+                        System.out.println(nome2);
                         lmed2.setText(nome2);
                         break;
                     case 2:
                         String nome3 = conecta.getNomesMed().get(i);
+                         System.out.println(nome3);
                         lmed3.setText(nome3);
                         break;
                     default:
                         break;
                 }
             }
-            String frase = imagens.getDorflex().getName();
-            String[] parts = frase.split(".png");
-            String nome = parts[0];
-
-            if (nome.contains(lmed1.getText())) {
-            is = new FileInputStream(imagens.getDorflex().getAbsolutePath());
-            Image image = new Image(is);
-            med1.setImage(image);
-            
+          String[] dorflex =  imagens.getDorflex().getName().split(".png");
+          String[] doril =  imagens.getDoril().getName().split(".png");
+          System.out.println(doril[0]);
+          System.out.println(lmed2.getText());
+          
+          String[] dipirona =  imagens.getDipirona().getName().split(".png");
+          
+            if (dorflex[0].contains(lmed1.getText())) {
+                is = new FileInputStream(imagens.getDorflex().getAbsolutePath());
+                Image image = new Image(is);   
+                med1.setImage(image);
             }
-            
+            if(doril[0].contains(lmed2.getText())){
+                 is = new FileInputStream(imagens.getDoril().getAbsolutePath());
+                 System.out.println(imagens.getDoril().getAbsolutePath());
+                Image image = new Image(is);   
+                med2.setImage(image);
+             }
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(SelecaoCabController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(SelecaoCabController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-
+        }
     }
 }
