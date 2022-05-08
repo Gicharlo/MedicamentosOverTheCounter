@@ -87,7 +87,7 @@
                </font>
             </Text>
             <Hyperlink layoutX="31.0" layoutY="49.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
-            <Hyperlink layoutX="313.0" layoutY="38.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
+            <Hyperlink layoutX="313.0" layoutY="38.0" onAction="#Avaliacao" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
             <Text fill="#414bb2" layoutX="226.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
                <font>
                   <Font size="18.0" />
@@ -104,7 +104,7 @@
         <menus>
           <Menu mnemonicParsing="false">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Congestão">
+                  <MenuItem fx:id="m1" mnemonicParsing="false" text="Congestão">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -113,7 +113,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Gripe">
+                  <MenuItem fx:id="m2" mnemonicParsing="false" text="Gripe">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -122,7 +122,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Febre">
+                  <MenuItem fx:id="m3" mnemonicParsing="false" text="Febre">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -131,7 +131,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-              <MenuItem mnemonicParsing="false" text="Dor abdominal">
+              <MenuItem fx:id="m4" mnemonicParsing="false" text="Dor abdominal">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -140,7 +140,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#DordeCabeca" text="Dor de cabeça">
+                  <MenuItem fx:id="m5" mnemonicParsing="false" onAction="#DordeCabeca" text="Dor de cabeça">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -149,7 +149,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Dor de estômago">
+                  <MenuItem fx:id="m6" mnemonicParsing="false" text="Dor de estômago">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -158,7 +158,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Dor de garganta">
+                  <MenuItem fx:id="m7" mnemonicParsing="false" text="Dor de garganta">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>
@@ -167,7 +167,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Dor muscular">
+                  <MenuItem fx:id="m8" mnemonicParsing="false" text="Dor muscular">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>

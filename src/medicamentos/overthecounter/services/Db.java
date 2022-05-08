@@ -2,27 +2,25 @@ package medicamentos.overthecounter.services;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Db {
     
     private Connection conexao = null;
     private String url = "jdbc:mysql://localhost:3306/db_projeto?user=root&password=Giovanna@22";
     private ResultSet med;
-
-    /**
-     * @return the url
-     */
-    public void RetornaMed(ResultSet med) throws SQLException{  
-         /*while (med.next()) {
-                System.out.println("Nome:" + med.getString("nome"));
-            }*/
-         while(med.next()){
-              System.out.println("Nome:" + med.getString("nome"));
-            }
+    private List<String> nomesMed = new ArrayList<>();
+    private PreparedStatement stmt;
+    
+    public void RetornaMed(ResultSet med) throws SQLException{
        
-         
+         while(med.next()){
+              getNomesMed().add(med.getString("nome"));      
+            }
     }
     public String getUrl() {
         return url;
@@ -62,8 +60,26 @@ public class Db {
     public void setMed(ResultSet med) {
         this.med = med;
     }
-     
-    
-  
+
+    /**
+     * @return the nomesMed
+     */
+    public List<String> getNomesMed() {
+        return nomesMed;
+    }
+
+    /**
+     * @param nomesMed the nomesMed to set
+     */
+    public void setNomesMed(List<String> nomesMed) {
+        this.nomesMed = nomesMed;
+    }
+
+    /**
+     * @return the stmt
+     */
+    public PreparedStatement getStmt() {
+        return stmt;
+    }
 }
 

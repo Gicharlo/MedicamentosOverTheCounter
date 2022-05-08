@@ -25,7 +25,7 @@ public class ProgramFarmacia extends Application {
         try {
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO"));
-            conecta.RetornaMed(conecta.getMed());
+           // conecta.RnomeMed(conecta.getMed());
             
         } catch (SQLException e) {
             System.out.println("Ocorreu um erro ao acessar o banco" + e.getMessage());
