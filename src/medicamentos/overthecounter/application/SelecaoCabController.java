@@ -17,11 +17,16 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
@@ -61,6 +66,20 @@ public class SelecaoCabController implements Initializable {
 
     Db conecta = new Db();
     Images imagens = new Images();
+    
+        @FXML
+    public void SelecionarMed(ActionEvent event) {
+        try {
+            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("SelecaoMedicamento.fxml"));
+            Parent root1 = ((Parent) tela2.load( ));
+            Stage stage = new Stage();
+            stage.setTitle("Cesta");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SelecaoCabController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,42 +94,41 @@ public class SelecaoCabController implements Initializable {
                 switch (i) {
                     case 0:
                         String nome = conecta.getNomesMed().get(i);
-                        System.out.println(nome);
                         lmed1.setText(nome);
                         break;
                     case 1:
                         String nome2 = conecta.getNomesMed().get(i);
-                        System.out.println(nome2);
                         lmed2.setText(nome2);
                         break;
                     case 2:
                         String nome3 = conecta.getNomesMed().get(i);
-                         System.out.println(nome3);
                         lmed3.setText(nome3);
                         break;
                     default:
                         break;
                 }
             }
-          String[] dorflex =  imagens.getDorflex().getName().split(".png");
-          String[] doril =  imagens.getDoril().getName().split(".png");
-          System.out.println(doril[0]);
-          System.out.println(lmed2.getText());
-          
-          String[] dipirona =  imagens.getDipirona().getName().split(".png");
-          
-            if (dorflex[0].contains(lmed1.getText())) {
-                is = new FileInputStream(imagens.getDorflex().getAbsolutePath());
-                Image image = new Image(is);   
+            String[] dorflex = imagens.getDorflex().getName().split(".png");
+            String[] doril = imagens.getDoril().getName().split(".png");
+            String[] dipirona = imagens.getDipirona().getName().split(".png");
+            String[] aspirina = imagens.getAspirina().getName().split(".png");
+            String[] novalgina = imagens.getNeosaldina().getName().split(".png");
+            
+            if (lmed1.getText().contains(aspirina[0])||lmed2.getText().contains(aspirina[0]) ||lmed3.getText().contains(aspirina[0])) {
+                is = new FileInputStream(imagens.getAspirina().getAbsolutePath());
+                Image image = new Image(is);
                 med1.setImage(image);
             }
-            if(doril[0].contains(lmed2.getText())){
-                 is = new FileInputStream(imagens.getDoril().getAbsolutePath());
-                 System.out.println(imagens.getDoril().getAbsolutePath());
-                Image image = new Image(is);   
+            if (lmed1.getText().contains(dorflex[0])||lmed2.getText().contains(dorflex[0]) ||lmed3.getText().contains(dorflex[0])) {
+                is = new FileInputStream(imagens.getDorflex().getAbsolutePath());
+                Image image = new Image(is);
                 med2.setImage(image);
-             }
-
+            }
+            if (lmed1.getText().contains(novalgina[0])||lmed2.getText().contains(novalgina[0]) ||lmed3.getText().contains(novalgina[0])) {
+                is = new FileInputStream(imagens.getNeosaldina().getAbsolutePath());
+                Image image = new Image(is);
+                med3.setImage(image);
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(SelecaoCabController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
