@@ -55,7 +55,16 @@ public class InicialFarmaciaController implements Initializable {
 
     @FXML
     private void btncAtualizar(ActionEvent event) {
-
+        try {
+            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("AtualizarEstoque.fxml"));
+            Parent root1 = ((Parent) tela2.load());
+            Stage stage = new Stage();
+            stage.setTitle("Atualização do Estoque");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InicialFarmaciaController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     @FXML

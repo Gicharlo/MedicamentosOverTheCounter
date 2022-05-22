@@ -1,7 +1,9 @@
-
 package medicamentos.overthecounter.entities;
 
 public class Medicamentos {
+
+    private boolean ativado = false;
+
     private String nome;
     private String sintoma;
     private String principio_ativo;
@@ -13,9 +15,27 @@ public class Medicamentos {
     private String preco;
     private int estoque;
 
+    public Medicamentos(String nome, String preco, int estoque, boolean ativado) {
+        this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
+        this.ativado = ativado;
+
+    }
+
+
+    public boolean isAtivado() {
+        return ativado;
+    }
+
+    public void setAtivado(boolean ativado) {
+        this.ativado = ativado;
+    }
+
     public String getNome() {
         return nome;
     }
+
     public String getSintoma() {
         return sintoma;
     }
@@ -43,12 +63,13 @@ public class Medicamentos {
     public String getDescricao() {
         return descricao;
     }
+
     public String getPreco() {
         return preco;
     }
+
     public int getEstoque() {
         return estoque;
     }
-    
-    
+
 }

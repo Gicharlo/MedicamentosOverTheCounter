@@ -40,7 +40,25 @@ public class SelecaoMedicamentoController implements Initializable {
 
     @FXML
     private Label titulo;
+    @FXML
+    private Label prinAtivo;
+    @FXML
+    private Label partesCorpo;
+    @FXML
+    private Label classeMed;
+
+    @FXML
+    private Label doencasCom;
+
+    @FXML
+    private Label modoUso;
     
+    @FXML
+    private Label preco;
+    
+    @FXML
+    private Label descricao;
+
     @FXML
     private ImageView img1;
 
@@ -117,24 +135,37 @@ public class SelecaoMedicamentoController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-         InputStream is = null;
-        try {            
+    public void initialize(URL url, ResourceBundle rb) {   
+        try {
+            InputStream is;
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
             conecta.RetornaNomeMed(conecta.getMed());
 
             String tl = conecta.getNomesMed().get(0);
-            titulo.setText(tl);
+            String pAtivo = conecta.getPrinAtivo().get(0);
+            String Pcorpo = conecta.getPcorpo().get(0);
+            String classi = conecta.getClassi().get(0);
+            String modoUsoL = conecta.getModoUso().get(0);
+            String desc = conecta.getDesc().get(0);
+            String  doencas = conecta.getDoencasCom().get(0);
+            String  precoL  = conecta.getPreco().get(0);
+
+            titulo.setText(tl);          
+            prinAtivo.setText(pAtivo);
+            partesCorpo.setText(Pcorpo);
+            classeMed.setText(classi);
+            doencasCom.setText(doencas);
+            preco.setText(precoL);
+            modoUso.setText(modoUsoL);
+            descricao.setText(desc);
+
+            
             String[] aspirina = imagens.getAspirina().getName().split(".png");
-             is = new FileInputStream(imagens.getAspirina().getAbsolutePath());
-             Image image = new Image(is);
-             img1.setImage(image);
-                
-         
-             
-             
+            is = new FileInputStream(imagens.getAspirina().getAbsolutePath());
+            Image image = new Image(is);
+            img1.setImage(image);
+
         } catch (SQLException ex) {
             Logger.getLogger(SelecaoMedicamentoController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FileNotFoundException ex) {

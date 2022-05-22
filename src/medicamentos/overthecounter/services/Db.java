@@ -1,7 +1,6 @@
 package medicamentos.overthecounter.services;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,34 +10,46 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 public class Db {
+
+    /**
+     * @return the doencasCom
+     */
+   
 
     private Connection conexao = null;
     private String url = "jdbc:mysql://localhost:3306/projeto?user=root&password=Giovanna@22";
     private ResultSet med;
     private List<String> nomesMed = new ArrayList<>();
     private List<String> pAtivo = new ArrayList<>();
+    private List<String> pcorpo = new ArrayList<>();
+    private List<String> classi = new ArrayList<>();
     private List<String> modoUso = new ArrayList<>();
-    private List<String> Pcorpo = new ArrayList<>();
-    private List<String> Classi = new ArrayList<>();
     private List<String> desc = new ArrayList<>();
-    private List<String> preco = new ArrayList<>();
-    
+    private List<String> doencasCom = new ArrayList<>();
+    private List<String> preco = new ArrayList<>();   
     private Map<String, String> nomeP = new HashMap<>();
+
+     public List<String> getDoencasCom() {
+        return doencasCom;
+    }
     private PreparedStatement stmt;
 
     public void RetornaNomeMed(ResultSet med) throws SQLException {
 
         while (med.next()) {
-            getNomesMed().add(med.getString("nome"));
             getpAtivo().add(med.getString("principio_ativo"));
-            getPcorpo().add(med.getString("partes_do_corpo"));
             getModoUso().add(med.getString("modo_uso"));
-            getClassi().add(med.getString("classificação"));
+            getDoencasCom().add(med.getString("problema"));
+            getPcorpo().add(med.getString("partes_do_corpo"));
+            getClassi().add(med.getString("classificacao"));
             getDesc().add(med.getString("descricao"));
-            
-            System.out.println(getNomesMed());
+            getNomesMed().add(med.getString("nome"));
+            getPreco().add(med.getString("preco"));
+
         }
     }
 
@@ -99,6 +110,15 @@ public class Db {
     public List<String> getNomesMed() {
         return nomesMed;
     }
+    
+   public List<String> getPrinAtivo() {
+        return getpAtivo();
+    }
+
+    public List<String> getPreco() {
+        return preco;
+    }
+
 
     /**
      * @param nomesMed the nomesMed to set
@@ -128,45 +148,23 @@ public class Db {
         return pAtivo;
     }
 
-    /**
-     * @return the modoUso
-     */
+
     public List<String> getModoUso() {
         return modoUso;
     }
 
-    /**
-     * @return the Pcorpo
-     */
+
     public List<String> getPcorpo() {
-        return Pcorpo;
+        return pcorpo;
     }
 
-    /**
-     * @return the desc
-     */
+    public List<String> getClassi() {
+        return classi;
+    }
     public List<String> getDesc() {
         return desc;
     }
-
-    /**
-     * @return the preco
-     */
-    public List<Float> getPreco() {
-        return preco;
-    }
-
-    /**
-     * @param preco the preco to set
-     */
-    public void setPreco(List<Float> preco) {
-        this.preco = preco;
-    }
-
-    /**
-     * @return the Classi
-     */
-    public List<String> getClassi() {
-        return Classi;
+    public void setpAtivo(List<String> pAtivo) {
+        this.pAtivo = pAtivo;
     }
 }
