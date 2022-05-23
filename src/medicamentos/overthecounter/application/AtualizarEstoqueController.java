@@ -2,8 +2,10 @@ package medicamentos.overthecounter.application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -23,14 +25,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import medicamentos.overthecounter.entities.Medicamentos;
+import medicamentos.overthecounter.services.Db;
 
-/**
- * FXML Controller class
- *
- * @author giova
- */
 public class AtualizarEstoqueController implements Initializable {
 
+    Db conecta = new Db();
     @FXML
     private TableView<Medicamentos> tabela;
     @FXML
@@ -43,21 +42,42 @@ public class AtualizarEstoqueController implements Initializable {
     private TableColumn<Medicamentos, Integer> quantidade;
 
     private List<Medicamentos> ListMedicamentos = new ArrayList();
-
+    Medicamentos med;
     private ObservableList<Medicamentos> observableListMedicamentos;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        carregarTableViewMedicamentos();
+        try {
+            checkbox.setCellValueFactory(new PropertyValueFactory<>("ativado"));
+            produto.setCellValueFactory(new PropertyValueFactory<>("nome"));
+            preco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+            quantidade.setCellValueFactory(new PropertyValueFactory<>("estoque"));
+            checkbox.setCellFactory(CheckBoxTableCell.forTableColumn(checkbox));
+
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO"));
+            conecta.RetornaNomeMed(conecta.getMed());
+             System.out.println(conecta.getNomesMed());
+
+            for (int i = 0; i < conecta.getNomesMed().size(); i++) {
+                String medb = conecta.getNomesMed().get(i);
+                String precob = conecta.getPreco().get(i);
+                String qtt = conecta.getQtt().get(i);
+                ListMedicamentos.add(new Medicamentos(medb, precob, qtt));
+            }
+     
+            observableListMedicamentos = FXCollections.observableArrayList(ListMedicamentos);
+            tabela.setItems(observableListMedicamentos);
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AtualizarEstoqueController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public void carregarTableViewMedicamentos() {
-        checkbox.setCellValueFactory(new PropertyValueFactory<>("ativado"));
-        produto.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        preco.setCellValueFactory(new PropertyValueFactory<>("preco"));
-        quantidade.setCellValueFactory(new PropertyValueFactory<>("estoque"));
-        checkbox.setCellFactory(CheckBoxTableCell.forTableColumn(checkbox));
+    public void carregarTableViewMedicamentos() throws SQLException {
 
+        /*
         Medicamentos m1 = new Medicamentos("dipirona", "R$ 30,00", 18, false);
         Medicamentos m2 = new Medicamentos( "daproxeno", "R$ 12,00", 0, false);
         Medicamentos m3 = new Medicamentos("saproxeno", "R$ 12,25", 0, false);
@@ -81,11 +101,8 @@ public class AtualizarEstoqueController implements Initializable {
         ListMedicamentos.add(m9);
         ListMedicamentos.add(m10);
         ListMedicamentos.add(m11);
-
-        observableListMedicamentos = FXCollections.observableArrayList(ListMedicamentos);
-
-        tabela.setItems(observableListMedicamentos);
-
+        
+         */
     }
 
     @FXML

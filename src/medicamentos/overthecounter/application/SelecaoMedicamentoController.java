@@ -151,12 +151,14 @@ public class SelecaoMedicamentoController implements Initializable {
             String  doencas = conecta.getDoencasCom().get(0);
             String  precoL  = conecta.getPreco().get(0);
 
+            
+            
             titulo.setText(tl);          
             prinAtivo.setText(pAtivo);
             partesCorpo.setText(Pcorpo);
             classeMed.setText(classi);
             doencasCom.setText(doencas);
-            preco.setText(precoL);
+            preco.setText("R$" + precoL);
             modoUso.setText(modoUsoL);
             descricao.setText(desc);
 

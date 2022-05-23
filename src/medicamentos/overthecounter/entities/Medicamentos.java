@@ -1,10 +1,13 @@
 package medicamentos.overthecounter.entities;
 
+
+
 public class Medicamentos {
 
     private boolean ativado = false;
-
     private String nome;
+    private String preco;
+    private String qtt;
     private String sintoma;
     private String principio_ativo;
     private String uso;
@@ -12,17 +15,15 @@ public class Medicamentos {
     private String partes_do_corpo;
     private String classificacao;
     private String descricao;
-    private String preco;
+
     private int estoque;
 
-    public Medicamentos(String nome, String preco, int estoque, boolean ativado) {
-        this.nome = nome;
-        this.preco = preco;
-        this.estoque = estoque;
-        this.ativado = ativado;
+    public Medicamentos(String nome, String preco, String qtt) {
+         this.nome = nome;
+         this.preco = preco;
+         this.qtt = qtt;
 
     }
-
 
     public boolean isAtivado() {
         return ativado;
@@ -32,9 +33,7 @@ public class Medicamentos {
         this.ativado = ativado;
     }
 
-    public String getNome() {
-        return nome;
-    }
+ 
 
     public String getSintoma() {
         return sintoma;
@@ -64,12 +63,50 @@ public class Medicamentos {
         return descricao;
     }
 
+    public int getEstoque() {
+        return estoque;
+    }
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @return the preco
+     */
     public String getPreco() {
         return preco;
     }
 
-    public int getEstoque() {
-        return estoque;
+    /**
+     * @return the qtt
+     */
+    public String getQtt() {
+        return qtt;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @param preco the preco to set
+     */
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
+    /**
+     * @param qtt the qtt to set
+     */
+    public void setQtt(String qtt) {
+        this.qtt = qtt;
     }
 
 }

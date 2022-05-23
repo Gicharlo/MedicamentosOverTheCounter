@@ -54,6 +54,8 @@ public class InicialClienteController implements Initializable {
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
             conecta.NomeP(conecta.getMed());
+            
+            
 
         if (avaliacao == null) {
             JOptionPane.showMessageDialog(null, "Digite a sua avaliação!");
@@ -64,7 +66,8 @@ public class InicialClienteController implements Initializable {
 
     @FXML
     public void AbrirCesta(ActionEvent event) {
-        try {
+           ProgramCliente.changeScreen("cesta");
+       /*try {   
             FXMLLoader tela2 = new FXMLLoader(getClass().getResource("Cesta.fxml"));
             Parent root1 = ((Parent) tela2.load());
             Stage stage = new Stage();
@@ -73,11 +76,14 @@ public class InicialClienteController implements Initializable {
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
 
     @FXML
     public void DordeCabeca(ActionEvent event) throws SQLException {
+          ProgramCliente.changeScreen("dorDeCabeca");
+        
+        /*
         try {
             FXMLLoader tela2 = new FXMLLoader(getClass().getResource("SelecaoCab.fxml"));
             Parent root1 = ((Parent) tela2.load());
@@ -89,7 +95,7 @@ public class InicialClienteController implements Initializable {
  
         } catch (IOException ex) {
             Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
 
     @FXML

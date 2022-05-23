@@ -9,11 +9,13 @@ import javafx.application.Application;
 import medicamentos.overthecounter.services.Db;
 
 public class ProgramCliente extends Application {
-
+    
     private static Stage stage;
     private static Scene mainScene;
     private static Scene inicialClienteScene;
     private static Scene institucionalScene;
+    private static Scene cestaScene;
+    private static Scene dorDeCabecaScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,6 +31,13 @@ public class ProgramCliente extends Application {
        Parent institucional = FXMLLoader.load(getClass().getResource("Institucional.fxml"));
        institucionalScene = new Scene(institucional);
        
+       Parent dorDeCabeca= FXMLLoader.load(getClass().getResource("SelecaoCab.fxml"));
+       dorDeCabecaScene= new Scene(dorDeCabeca);
+        
+      Parent cesta = FXMLLoader.load(getClass().getResource("Cesta.fxml"));
+      cestaScene = new Scene(cesta);
+      
+               
        primaryStage.setScene(mainScene);
        primaryStage.show();
     }
@@ -42,6 +51,12 @@ public class ProgramCliente extends Application {
                 break;
             case "institicional":
                  stage.setScene(institucionalScene);
+                break;
+           case "cesta":
+                 stage.setScene(cestaScene);
+                break;
+            case "dorDeCabeca":
+                 stage.setScene(dorDeCabecaScene);
                 break;
         }
     }

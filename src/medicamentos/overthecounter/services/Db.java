@@ -30,9 +30,12 @@ public class Db {
     private List<String> modoUso = new ArrayList<>();
     private List<String> desc = new ArrayList<>();
     private List<String> doencasCom = new ArrayList<>();
-    private List<String> preco = new ArrayList<>();   
+    private List<String> preco = new ArrayList<>(); 
+    private List<String> qtt = new ArrayList<>();  
     private Map<String, String> nomeP = new HashMap<>();
 
+   
+   
      public List<String> getDoencasCom() {
         return doencasCom;
     }
@@ -49,6 +52,7 @@ public class Db {
             getDesc().add(med.getString("descricao"));
             getNomesMed().add(med.getString("nome"));
             getPreco().add(med.getString("preco"));
+             getQtt().add(med.getString("estoque"));
 
         }
     }
@@ -166,5 +170,12 @@ public class Db {
     }
     public void setpAtivo(List<String> pAtivo) {
         this.pAtivo = pAtivo;
+    }
+
+    /**
+     * @return the qtt
+     */
+    public List<String> getQtt() {
+        return qtt;
     }
 }
