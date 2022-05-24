@@ -4,6 +4,7 @@
  */
 package medicamentos.overthecounter.application;
 
+import java.awt.Desktop;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,16 +28,16 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import medicamentos.overthecounter.pdf.Bulas;
 
-/**
- * FXML Controller class
- *
- * @author giova
- */
 public class SelecaoMedicamentoController implements Initializable {
 
     Db conecta = new Db();
     Images imagens = new Images();
+    Bulas bula = new Bulas();
 
     @FXML
     private Label titulo;
@@ -52,10 +53,10 @@ public class SelecaoMedicamentoController implements Initializable {
 
     @FXML
     private Label modoUso;
-    
+
     @FXML
     private Label preco;
-    
+
     @FXML
     private Label descricao;
 
@@ -64,78 +65,47 @@ public class SelecaoMedicamentoController implements Initializable {
 
     @FXML
     public void AbrirCesta(ActionEvent event) {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("Cesta.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Cesta");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ProgramCliente.changeScreen("cesta");
     }
 
     @FXML
     private void Institucional(ActionEvent event) {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("Institucional.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Institucional");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ProgramCliente.changeScreen("institicional");
     }
 
     @FXML
     private void CancelarConsulta(ActionEvent event) {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("DescansoT.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Descanso");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ProgramCliente.changeScreen("mainScene");
     }
 
     @FXML
     private void Avaliacao(ActionEvent event) throws SQLException {
-        /*Sempre que clicar em cancelar, ela da a msg Tchau.*/
         String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
-        conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
-        conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
-        conecta.NomeP(conecta.getMed());
-
         if (avaliacao == null) {
             JOptionPane.showMessageDialog(null, "Tchau...");
         } else {
             JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
         }
     }
 
     @FXML
-    public void DordeCabeca(ActionEvent event) throws SQLException {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("SelecaoCab.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Medicamentos");
-            stage.setScene(new Scene(root1));
-            stage.show();
+    public void Bula(ActionEvent event) throws IOException {
+        Desktop desktop = Desktop.getDesktop();
+        File file = new File(bula.getAspirina());
+        desktop.open(file);
+    }
 
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    @FXML
+    public void DordeCabeca(ActionEvent event) throws SQLException {
+        ProgramCliente.changeScreen("dorDeCabeca");
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {   
+    public void initialize(URL url, ResourceBundle rb) {
         try {
             InputStream is;
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
@@ -148,12 +118,10 @@ public class SelecaoMedicamentoController implements Initializable {
             String classi = conecta.getClassi().get(0);
             String modoUsoL = conecta.getModoUso().get(0);
             String desc = conecta.getDesc().get(0);
-            String  doencas = conecta.getDoencasCom().get(0);
-            String  precoL  = conecta.getPreco().get(0);
+            String doencas = conecta.getDoencasCom().get(0);
+            String precoL = conecta.getPreco().get(0);
 
-            
-            
-            titulo.setText(tl);          
+            titulo.setText(tl);
             prinAtivo.setText(pAtivo);
             partesCorpo.setText(Pcorpo);
             classeMed.setText(classi);
@@ -162,7 +130,6 @@ public class SelecaoMedicamentoController implements Initializable {
             modoUso.setText(modoUsoL);
             descricao.setText(desc);
 
-            
             String[] aspirina = imagens.getAspirina().getName().split(".png");
             is = new FileInputStream(imagens.getAspirina().getAbsolutePath());
             Image image = new Image(is);

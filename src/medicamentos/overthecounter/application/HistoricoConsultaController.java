@@ -1,37 +1,39 @@
 package medicamentos.overthecounter.application;
 
-import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+import medicamentos.overthecounter.services.Db;
 
 public class HistoricoConsultaController implements Initializable {
+    
+       Db conecta = new Db();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
- @FXML
+        @FXML
     private void Institucional(ActionEvent event) {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("Institucional.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Institucional");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(InicialFarmaciaController.class.getName()).log(Level.SEVERE, null, ex);
+       ProgramCliente.changeScreen("institucional");
+    }
+     @FXML
+    private void Avaliacao(ActionEvent event) throws SQLException {
+	String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
+        if (avaliacao == null) {
+            JOptionPane.showMessageDialog(null, "Tchau...");
+        } else {
+            JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
         }
     }
-    
     
     @FXML
     private void btncConsulta (ActionEvent event) {   

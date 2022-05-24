@@ -12,10 +12,18 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/giova/OneDrive/Área%20de%20Trabalho/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/SelecaoMedicamentoController.java</file>
-            <file>file:/C:/Users/giova/OneDrive/Área%20de%20Trabalho/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/SelecaoMedicamento.fxml</file>
-            <file>file:/C:/Users/giova/OneDrive/Área%20de%20Trabalho/MedicamentosOverTheCounter/src/medicamentos/overthecounter/services/Db.java</file>
-            <file>file:/C:/Users/giova/OneDrive/Área%20de%20Trabalho/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/ProgramCliente.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/Main.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/CestaController.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/Cesta.fxml</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/InicialClienteController.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/TokenGerado.fxml</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/ProgramCliente.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/images/Images.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/SelecaoCabController.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/SelecaoMedicamentoController.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/TokenGeradoController.java</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/SelecaoCab.fxml</file>
+            <file>file:/C:/MedicamentosOverTheCounter/src/medicamentos/overthecounter/application/ProgramFarmacia.java</file>
         </group>
     </open-files>
 </project-private>

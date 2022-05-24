@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
 
@@ -60,20 +61,49 @@ public class SelecaoCabController implements Initializable {
     Db conecta = new Db();
     Images imagens = new Images();
     
+    
+       @FXML
+    private void Institucional(ActionEvent event) {
+        ProgramCliente.changeScreen("institicional");
+    }
+    
+    @FXML
+    public void AbrirCesta(ActionEvent event) {
+        ProgramCliente.changeScreen("cesta");
+    }
+    @FXML
+    private void CancelarConsulta(ActionEvent event) {
+        ProgramCliente.changeScreen("main");
+    }
+    @FXML
+     private void telaInicial(ActionEvent event) {
+         ProgramCliente.changeScreen("inicialCliente");
+    }
+     
+    @FXML
+    public void DordeCabeca(ActionEvent event) throws SQLException {
+          ProgramCliente.changeScreen("dorDeCabeca");
+
+    }
+    
+     @FXML
+    private void Avaliacao(ActionEvent event) throws SQLException {
+      String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
+        if (avaliacao == null) {
+            JOptionPane.showMessageDialog(null, "Tchau...");
+        } else {
+            JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
+        }
+    }
+    
         @FXML
     public void SelecionarMed(ActionEvent event) {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("SelecaoMedicamento.fxml"));
-            Parent root1 = ((Parent) tela2.load( ));
-            Stage stage = new Stage();
-            stage.setTitle("Cesta");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(SelecaoCabController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        }
-
+    ProgramCliente.changeScreen("cabecaSelecaoUn");
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

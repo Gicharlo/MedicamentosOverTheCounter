@@ -24,30 +24,19 @@ public class DescansoTController implements Initializable {
     @FXML
     private void Institucional(ActionEvent event) {
          ProgramCliente.changeScreen("institicional");
-        /*
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("Institucional.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Institucional");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-    }
- @FXML
-    private void Avaliacao(ActionEvent event) throws SQLException {
-	/*Sempre que clicar em cancelar, ela da a msg Tchau.*/
-        String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
-            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
-            conecta.setMed(conecta.getConexao().createStatement().executeQuery("SELECT * FROM MEDICAMENTO WHERE SINTOMA='Dor de cabeça';"));
-            conecta.NomeP(conecta.getMed());
 
+    }
+    @FXML
+    private void Avaliacao(ActionEvent event) throws SQLException {
+	String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
         if (avaliacao == null) {
-            JOptionPane.showMessageDialog(null, "Digite a sua avaliação!");
+            JOptionPane.showMessageDialog(null, "Tchau...");
         } else {
             JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
         }
     }
 

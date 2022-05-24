@@ -4,41 +4,58 @@
  */
 package medicamentos.overthecounter.application;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import medicamentos.overthecounter.services.Db;
 
 public class CestaController implements Initializable {
 
-     Db conecta = new Db();
-       PreparedStatement stmt;
+    Db conecta = new Db();
+    PreparedStatement stmt;
+
+    @FXML
+    public void DordeCabeca(ActionEvent event) throws SQLException {
+        ProgramCliente.changeScreen("dorDeCabeca");
+    }
+
+    @FXML
+    public void AbrirCesta(ActionEvent event) {
+        ProgramCliente.changeScreen("cesta");
+    }
+
     @FXML
     private void CancelarConsulta(ActionEvent event) throws SQLException {
-        try {
-            FXMLLoader tela2 = new FXMLLoader(getClass().getResource("DescansoT.fxml"));
-            Parent root1 = ((Parent) tela2.load());
-            Stage stage = new Stage();
-            stage.setTitle("Descanso");
-            stage.setScene(new Scene(root1));
-            stage.show();
+        ProgramCliente.changeScreen("mainScene");
+    }
 
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
+    private void Institucional(ActionEvent event) {
+        ProgramCliente.changeScreen("institicional");
+    }
+
+    @FXML
+    private void Avaliacao(ActionEvent event) throws SQLException {
+   String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
+        if (avaliacao == null) {
+            JOptionPane.showMessageDialog(null, "Tchau...");
+        } else {
+            JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
         }
     }
+    
+   @FXML
+    private void GerarToken(ActionEvent event) {
+       System.out.println("oi");    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

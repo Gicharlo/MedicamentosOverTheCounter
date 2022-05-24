@@ -8,7 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="MedicamentosOverTheCounter.jar" size="89474151" download="eager" />
+    <jar href="MedicamentosOverTheCounter.jar" size="89928243" download="eager" />
+    <jar href="lib\jPDFViewerFX.jar" size="4195886" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="medicamentos.overthecounter.application.ProgramCliente"  name="MedicamentosOverTheCounter" />

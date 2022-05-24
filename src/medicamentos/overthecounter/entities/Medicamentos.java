@@ -108,5 +108,4 @@ public class Medicamentos {
     public void setQtt(String qtt) {
         this.qtt = qtt;
     }
-
 }

@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.SelecaoCabController">
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.SelecaoCabController">
    <children>
       <Pane layoutX="2.0" layoutY="165.0" prefHeight="479.0" prefWidth="1034.0" style="-fx-background-color: #FFFF;">
          <children>
@@ -31,7 +31,7 @@
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="7.0" layoutY="98.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf;" text="Mais Recomendado">
+                  <CheckBox layoutX="7.0" layoutY="98.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf0;" text="Mais Recomendado">
                      <font>
                         <Font size="14.0" />
                      </font></CheckBox>
@@ -40,7 +40,7 @@
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="6.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf;" text="Menos Recomendado">
+                  <CheckBox layoutX="6.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf0;" text="Menos Recomendado">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -50,12 +50,12 @@
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutX="6.0" layoutY="219.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf;" text="Maior Preço">
+                  <CheckBox layoutX="6.0" layoutY="219.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf0;" text="Maior Preço">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="6.0" layoutY="258.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf;" text="Menos Preço">
+                  <CheckBox layoutX="6.0" layoutY="258.0" mnemonicParsing="false" style="-fx-background-color: #d9dbf0;" text="Menos Preço">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -109,8 +109,8 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Hyperlink layoutX="41.0" layoutY="61.0" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
-                  <Hyperlink layoutX="373.0" layoutY="65.0" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
+                  <Hyperlink layoutX="41.0" layoutY="61.0" onAction="#Institucional" prefHeight="29.0" prefWidth="185.0" text="Sobre medicamentos OTC" />
+                  <Hyperlink layoutX="373.0" layoutY="65.0" onAction="#Avaliacao" prefHeight="29.0" prefWidth="92.0" text="Avaliação" />
                   <Text fill="#414bb2" layoutX="226.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desenvolvedores:">
                      <font>
                         <Font size="18.0" />
@@ -199,7 +199,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <Button layoutX="780.0" layoutY="326.0" mnemonicParsing="false" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Tela Inicial">
+            <Button layoutX="780.0" layoutY="326.0" mnemonicParsing="false" onAction="#telaInicial" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Tela Inicial">
                <font>
                   <Font size="14.0" />
                </font>
@@ -207,7 +207,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="878.0" layoutY="326.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Cancelar Consulta">
+            <Button layoutX="878.0" layoutY="326.0" mnemonicParsing="false" onAction="#CancelarConsulta" prefHeight="32.0" prefWidth="139.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Cancelar Consulta">
                <font>
                   <Font size="14.0" />
                </font>
@@ -223,7 +223,7 @@
             <Image url="@../images/1%20(1).png" />
          </image>
       </ImageView>
-      <Button layoutX="922.0" layoutY="41.0" mnemonicParsing="false" style="-fx-background-radius: 15;">
+      <Button layoutX="922.0" layoutY="41.0" mnemonicParsing="false" onAction="#AbrirCesta" style="-fx-background-radius: 15;">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -292,7 +292,7 @@
                         </ImageView>
                      </graphic>
                   </MenuItem>
-                  <MenuItem fx:id="m5" mnemonicParsing="false" text="Dor de cabeça">
+                  <MenuItem fx:id="m5" mnemonicParsing="false" onAction="#DordeCabeca" text="Dor de cabeça">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0">
                            <image>

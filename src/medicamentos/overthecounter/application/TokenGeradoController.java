@@ -1,46 +1,48 @@
 package medicamentos.overthecounter.application;
 
-import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+import medicamentos.overthecounter.services.Db;
 
-/**
- * FXML Controller class
- *
- * @author giova
- */
 public class TokenGeradoController implements Initializable {
+
+    Db conecta = new Db();
 
     @FXML
     private void FinalizarConsulta(ActionEvent event) {
-        try {
-            FXMLLoader telax = new FXMLLoader(getClass().getResource("DescansoT.fxml"));
-            Parent root1 = ((Parent) telax.load());
-            Stage stage = new Stage();
-            stage.setTitle("Descanso T");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(DescansoTController.class.getName()).log(Level.SEVERE, null, ex);
+        ProgramCliente.changeScreen("main");
+    }
+   
+     @FXML
+    private void Institucional(ActionEvent event) {
+         ProgramCliente.changeScreen("institicional");
+    }
+
+
+    @FXML
+    private void Avaliacao(ActionEvent event) throws SQLException {
+        String avaliacao = JOptionPane.showInputDialog(null, "Digite a sua avaliação", "Digite aqui...");
+        if (avaliacao == null) {
+            JOptionPane.showMessageDialog(null, "Tchau...");
+        } else {
+            JOptionPane.showMessageDialog(null, "Avaliação recebida com sucesso.", "Mensagem recebida", JOptionPane.INFORMATION_MESSAGE);
+            String sql = "INSERT INTO avaliacao (id_consulta, avaliacao )"
+                    + "VALUES (NULL, '" + avaliacao + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
         }
     }
-    
-    
-    /**
-     * Initializes the controller class.
-     */
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

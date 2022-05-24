@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicamentos.overthecounter.application.SelecaoMedicamentoController">
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1034.0" style="-fx-background-color: #414bb2;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="medicamentos.overthecounter.application.SelecaoMedicamentoController">
    <children>
       <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="50.0" layoutY="1.0">
          <image>
@@ -292,7 +292,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="552.0" layoutY="207.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Bula">
+            <Button layoutX="552.0" layoutY="207.0" mnemonicParsing="false" onAction="#Bula" prefHeight="32.0" prefWidth="60.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Bula">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
