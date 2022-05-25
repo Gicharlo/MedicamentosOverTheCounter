@@ -3,7 +3,6 @@ package medicamentos.overthecounter.application;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.DriverManager;
@@ -13,23 +12,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import medicamentos.overthecounter.entities.Medicamentos;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
 
-/**
- * FXML Controller class
- *
- * @author giova
- */
 public class SelecaoCabController implements Initializable {
 
     @FXML
@@ -60,7 +52,10 @@ public class SelecaoCabController implements Initializable {
 
     Db conecta = new Db();
     Images imagens = new Images();
-    
+    @FXML
+    private TextField txtPesquisa;
+
+    Medicamentos sintomas = new Medicamentos();
     
        @FXML
     private void Institucional(ActionEvent event) {
@@ -97,6 +92,31 @@ public class SelecaoCabController implements Initializable {
                     + "VALUES (NULL, '" + avaliacao + "');";
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.getConexao().prepareStatement(sql).execute();
+        }
+    }
+    
+    @FXML
+    public void Busca(ActionEvent event) {
+        sintomas.getSintoma().add("dor de cabeça");
+        sintomas.getSintoma().add("gripe");
+        sintomas.getSintoma().add("febre");
+        sintomas.getSintoma().add("congestão");
+        sintomas.getSintoma().add("dor abdoniminal");
+        sintomas.getSintoma().add("dor de estomâgo");
+        sintomas.getSintoma().add("dor de garganta");
+        sintomas.getSintoma().add("dor muscular");
+
+        for (int i = 0; i < sintomas.getSintoma().size(); i++) {
+            if (sintomas.getSintoma().get(i).contains(txtPesquisa.getText())) {
+                switch (txtPesquisa.getText()) {
+                    case "dor de cabeça":
+                         ProgramCliente.changeScreen("dorDeCabeca");
+                        break;     
+                    default:
+                       ProgramCliente.changeScreen("erro");
+                    break;
+                }
+            } 
         }
     }
     

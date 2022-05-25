@@ -17,20 +17,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import javafx.scene.control.TextField;
+import medicamentos.overthecounter.entities.Medicamentos;
 import medicamentos.overthecounter.pdf.Bulas;
 
 public class SelecaoMedicamentoController implements Initializable {
@@ -62,6 +58,10 @@ public class SelecaoMedicamentoController implements Initializable {
 
     @FXML
     private ImageView img1;
+       @FXML
+    private TextField txtPesquisa;
+
+    Medicamentos sintomas = new Medicamentos();
 
     @FXML
     public void AbrirCesta(ActionEvent event) {
@@ -91,6 +91,31 @@ public class SelecaoMedicamentoController implements Initializable {
             conecta.getConexao().prepareStatement(sql).execute();
         }
     }
+     @FXML
+    public void Busca(ActionEvent event) {
+        sintomas.getSintoma().add("dor de cabeça");
+        sintomas.getSintoma().add("gripe");
+        sintomas.getSintoma().add("febre");
+        sintomas.getSintoma().add("congestão");
+        sintomas.getSintoma().add("dor abdoniminal");
+        sintomas.getSintoma().add("dor de estomâgo");
+        sintomas.getSintoma().add("dor de garganta");
+        sintomas.getSintoma().add("dor muscular");
+
+        for (int i = 0; i < sintomas.getSintoma().size(); i++) {
+            if (sintomas.getSintoma().get(i).contains(txtPesquisa.getText())) {
+                switch (txtPesquisa.getText()) {
+                    case "dor de cabeça":
+                         ProgramCliente.changeScreen("dorDeCabeca");
+                        break;     
+                    default:
+                       ProgramCliente.changeScreen("erro");
+                    break;
+                }
+            } 
+        }
+    }
+
 
     @FXML
     public void Bula(ActionEvent event) throws IOException {

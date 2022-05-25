@@ -18,12 +18,13 @@ public class ProgramCliente extends Application {
     private static Scene dorDeCabecaScene;
     private static Scene cabecaSelecaoScene;
     private static Scene selecaoMedicamentCbScene;
+    private static Scene erroScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
 
-       // primaryStage.setTitle("Tela inicial");
+        // primaryStage.setTitle("Tela inicial");
         Parent main = FXMLLoader.load(getClass().getResource("DescansoT.fxml"));
         mainScene = new Scene(main);
 
@@ -37,10 +38,13 @@ public class ProgramCliente extends Application {
         dorDeCabecaScene = new Scene(dorDeCabeca);
 
         Parent cesta = FXMLLoader.load(getClass().getResource("Cesta.fxml"));
-        cestaScene = new Scene(cesta);     
-        
-        Parent selecaoMedicamentoCb= FXMLLoader.load(getClass().getResource("SelecaoMedicamento.fxml"));
+        cestaScene = new Scene(cesta);
+
+        Parent selecaoMedicamentoCb = FXMLLoader.load(getClass().getResource("SelecaoMedicamento.fxml"));
         selecaoMedicamentCbScene = new Scene(selecaoMedicamentoCb);
+
+        Parent telaErro = FXMLLoader.load(getClass().getResource("TelaErro.fxml"));
+        erroScene = new Scene(telaErro);
 
         primaryStage.setScene(mainScene);
         primaryStage.show();
@@ -63,11 +67,13 @@ public class ProgramCliente extends Application {
             case "dorDeCabeca":
                 stage.setScene(dorDeCabecaScene);
                 break;
-              case "cabecaSelecaoUn":
-                stage.setScene( selecaoMedicamentCbScene);
+            case "cabecaSelecaoUn":
+                stage.setScene(selecaoMedicamentCbScene);
                 break;
-                
-               
+            case "erro":
+                stage.setScene(erroScene);
+                break;
+
         }
     }
 

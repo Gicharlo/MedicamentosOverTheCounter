@@ -12,7 +12,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
+import medicamentos.overthecounter.entities.Medicamentos;
 import medicamentos.overthecounter.services.Db;
 
 public class CestaController implements Initializable {
@@ -20,6 +22,10 @@ public class CestaController implements Initializable {
     Db conecta = new Db();
     PreparedStatement stmt;
 
+      @FXML
+    private TextField txtPesquisa;
+
+    Medicamentos sintomas = new Medicamentos();
     @FXML
     public void DordeCabeca(ActionEvent event) throws SQLException {
         ProgramCliente.changeScreen("dorDeCabeca");
@@ -50,6 +56,30 @@ public class CestaController implements Initializable {
                     + "VALUES (NULL, '" + avaliacao + "');";
             conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
             conecta.getConexao().prepareStatement(sql).execute();
+        }
+    }
+        @FXML
+    public void Busca(ActionEvent event) {
+        sintomas.getSintoma().add("dor de cabeça");
+        sintomas.getSintoma().add("gripe");
+        sintomas.getSintoma().add("febre");
+        sintomas.getSintoma().add("congestão");
+        sintomas.getSintoma().add("dor abdoniminal");
+        sintomas.getSintoma().add("dor de estomâgo");
+        sintomas.getSintoma().add("dor de garganta");
+        sintomas.getSintoma().add("dor muscular");
+
+        for (int i = 0; i < sintomas.getSintoma().size(); i++) {
+            if (sintomas.getSintoma().get(i).contains(txtPesquisa.getText())) {
+                switch (txtPesquisa.getText()) {
+                    case "dor de cabeça":
+                         ProgramCliente.changeScreen("dorDeCabeca");
+                        break;                     
+                    default:
+                       ProgramCliente.changeScreen("erro");
+                       break;
+                }
+            } 
         }
     }
     

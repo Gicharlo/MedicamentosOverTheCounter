@@ -1,5 +1,8 @@
 package medicamentos.overthecounter.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class Medicamentos {
@@ -8,7 +11,7 @@ public class Medicamentos {
     private String nome;
     private String preco;
     private String qtt;
-    private String sintoma;
+    private List<String> sintoma = new ArrayList<>();
     private String principio_ativo;
     private String uso;
     private String doencas;
@@ -18,6 +21,9 @@ public class Medicamentos {
 
     private int estoque;
 
+    public Medicamentos(){
+        
+    }
     public Medicamentos(String nome, String preco, String qtt) {
          this.nome = nome;
          this.preco = preco;
@@ -35,7 +41,7 @@ public class Medicamentos {
 
  
 
-    public String getSintoma() {
+    public List<String> getSintoma() {
         return sintoma;
     }
 
