@@ -25,6 +25,8 @@ import javax.swing.JOptionPane;
 import medicamentos.overthecounter.images.Images;
 import medicamentos.overthecounter.services.Db;
 import java.io.File;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import medicamentos.overthecounter.entities.Medicamentos;
 import medicamentos.overthecounter.pdf.Bulas;
@@ -43,6 +45,9 @@ public class SelecaoMedicamentoController implements Initializable {
     private Label partesCorpo;
     @FXML
     private Label classeMed;
+    
+    @FXML
+    private Label txtCesta;
 
     @FXML
     private Label doencasCom;
@@ -52,7 +57,12 @@ public class SelecaoMedicamentoController implements Initializable {
 
     @FXML
     private Label preco;
-
+    
+    @FXML
+    private Spinner<Integer> qttU;
+    
+    int correntValue;
+    
     @FXML
     private Label descricao;
 
@@ -125,10 +135,28 @@ public class SelecaoMedicamentoController implements Initializable {
     }
 
     @FXML
+    public void EncaminharMedCesta(ActionEvent event) throws SQLException {
+    
+        titulo.getText();
+        preco.getText();
+        qttU.getValue();
+
+        String sql;
+        sql = "INSERT INTO consulta (id, nome, preco, quantidade)"
+                + "VALUES (NULL, '" + titulo.getText()
+                + "', '"+ preco.getText() 
+                + "', '" + qttU.getValue() 
+                + "');";
+            conecta.setConexao(DriverManager.getConnection(conecta.getUrl()));
+            conecta.getConexao().prepareStatement(sql).execute();
+            txtCesta.setText("Produto Adicionado na Cesta");
+            
+       // ProgramCliente.changeScreen("dorDeCabeca");
+    }  
+      @FXML
     public void DordeCabeca(ActionEvent event) throws SQLException {
         ProgramCliente.changeScreen("dorDeCabeca");
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -159,7 +187,11 @@ public class SelecaoMedicamentoController implements Initializable {
             is = new FileInputStream(imagens.getAspirina().getAbsolutePath());
             Image image = new Image(is);
             img1.setImage(image);
-
+            
+          SpinnerValueFactory<Integer> value = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100);
+         value.setValue(1);
+         qttU.setValueFactory(value);
+         
         } catch (SQLException ex) {
             Logger.getLogger(SelecaoMedicamentoController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FileNotFoundException ex) {

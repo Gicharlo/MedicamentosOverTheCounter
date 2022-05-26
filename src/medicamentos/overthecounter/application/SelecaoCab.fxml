@@ -339,5 +339,10 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Label layoutX="102.0" layoutY="128.0" text="Categorias">
+         <font>
+            <Font name="Georgia" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

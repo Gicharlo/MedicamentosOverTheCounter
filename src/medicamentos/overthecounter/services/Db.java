@@ -10,20 +10,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 
 public class Db {
-
-    /**
-     * @return the doencasCom
-     */
-   
-
     private Connection conexao = null;
     private String url = "jdbc:mysql://localhost:3306/projeto?user=root&password=Giovanna@22";
     private ResultSet med;
     private List<String> nomesMed = new ArrayList<>();
+    private List<String> avaliacoes = new ArrayList<>();
     private List<String> pAtivo = new ArrayList<>();
     private List<String> pcorpo = new ArrayList<>();
     private List<String> classi = new ArrayList<>();
@@ -31,11 +24,13 @@ public class Db {
     private List<String> desc = new ArrayList<>();
     private List<String> doencasCom = new ArrayList<>();
     private List<String> preco = new ArrayList<>(); 
-    private List<String> qtt = new ArrayList<>();  
+    private List<String> qtt = new ArrayList<>();
+    private List<String> nomeC = new ArrayList<>();  
+    private List<String> qttC = new ArrayList<>();   
+    private List<String> qttTC = new ArrayList<>();   
+    private List<String> precoqtt = new ArrayList<>();  
     private Map<String, String> nomeP = new HashMap<>();
-
-   
-   
+    
      public List<String> getDoencasCom() {
         return doencasCom;
     }
@@ -56,6 +51,12 @@ public class Db {
 
         }
     }
+      public void RetornaAvaliação(ResultSet med) throws SQLException {
+
+        while (med.next()) {
+         getAvaliacoes().add(med.getString("avaliacao"));
+        }
+    }
 
     public void NomeP(ResultSet med) throws SQLException {
 
@@ -68,7 +69,6 @@ public class Db {
         }
 
     }
-
     public String getUrl() {
         return url;
     }
@@ -177,5 +177,61 @@ public class Db {
      */
     public List<String> getQtt() {
         return qtt;
+    }
+
+    /**
+     * @return the avaliacoes
+     */
+    public List<String> getAvaliacoes() {
+        return avaliacoes;
+    }
+
+    /**
+     * @param avaliacoes the avaliacoes to set
+     */
+    public void setAvaliacoes(List<String> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
+
+    /**
+     * @return the nomeC
+     */
+    public List<String> getNomeC() {
+        return nomeC;
+    }
+
+    /**
+     * @param nomeC the nomeC to set
+     */
+    public void setNomeC(List<String> nomeC) {
+        this.nomeC = nomeC;
+    }
+
+    /**
+     * @return the qttC
+     */
+    public List<String> getQttC() {
+        return qttC;
+    }
+
+    /**
+     * @param qttC the qttC to set
+     */
+    public void setQttC(List<String> qttC) {
+        this.qttC = qttC;
+    }
+
+    /**
+     * @return the qttTC
+     */
+    public List<String> getQttTC() {
+        return qttTC;
+    }
+
+    /**
+     * @param qttTC the qttTC to set
+     */
+    public void setQttTC(List<String> qttTC) {
+        this.qttTC = qttTC;
     }
 }

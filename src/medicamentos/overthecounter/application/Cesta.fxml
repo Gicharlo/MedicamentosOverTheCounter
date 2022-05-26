@@ -23,6 +23,11 @@
    <children>
       <Pane layoutY="169.0" prefHeight="369.0" prefWidth="1034.0" style="-fx-background-color: #ffffff;">
          <children>
+            <Label layoutX="857.0" layoutY="288.0" prefHeight="21.0" prefWidth="60.0" text="Total:" textFill="#807777">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
             <Button layoutX="904.0" layoutY="327.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Gerar Token" />
             <Label layoutX="22.0" layoutY="7.0" prefHeight="45.0" prefWidth="191.0" text="Minha Cesta" textFill="#414bb2">
                <font>
@@ -30,11 +35,11 @@
                </font>
             </Label>
             <Button layoutX="756.0" layoutY="327.0" mnemonicParsing="false" onAction="#CancelarConsulta" prefHeight="33.0" prefWidth="139.0" style="-fx-background-color: #e6e6e6; -fx-border-color: black; -fx-border-radius: 4;" text="Cancelar consulta" />
-            <ScrollPane layoutX="14.0" layoutY="53.0" prefHeight="263.0" prefWidth="1007.0">
+            <ScrollPane layoutX="14.0" layoutY="53.0" prefHeight="212.0" prefWidth="1004.0">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="1002.0">
                      <children>
-                        <TableView onSort="#CancelarConsulta" prefHeight="564.0" prefWidth="1007.0">
+                        <TableView onSort="#CancelarConsulta" prefHeight="521.0" prefWidth="1007.0">
                           <columns>
                             <TableColumn prefWidth="391.0" text="Produto" />
                             <TableColumn prefWidth="197.0" text="Preço Unitário" />
@@ -46,6 +51,11 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
+            <Label fx:id="totalpreco" layoutX="936.0" layoutY="288.0" textFill="#414bb2">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="50.0">
@@ -218,5 +228,10 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Label layoutX="100.0" layoutY="132.0" text="Categorias">
+         <font>
+            <Font name="Georgia" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

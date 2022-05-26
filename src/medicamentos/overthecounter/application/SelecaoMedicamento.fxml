@@ -264,7 +264,12 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Spinner layoutX="109.0" layoutY="151.0" prefHeight="31.0" prefWidth="86.0" />
+                  <Spinner fx:id="qttU" editable="true" layoutX="104.0" layoutY="151.0" prefHeight="31.0" prefWidth="86.0" />
+                  <Label fx:id="txtCesta" layoutX="375.0" layoutY="156.0" prefHeight="21.0" prefWidth="299.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane layoutX="23.0" layoutY="18.0" prefHeight="339.0" prefWidth="299.0" style="-fx-background-color: 0000; -fx-background-radius: 7px;">
@@ -280,7 +285,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button layoutX="633.0" layoutY="201.0" mnemonicParsing="false" style="-fx-background-radius: 15;">
+            <Button layoutX="633.0" layoutY="201.0" mnemonicParsing="false" onAction="#EncaminharMedCesta" style="-fx-background-radius: 15;">
                <graphic>
                   <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -298,5 +303,10 @@
                </cursor>
             </Button>
          </children></Pane>
+      <Label layoutX="110.0" layoutY="132.0" text="Categorias">
+         <font>
+            <Font name="Georgia" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
